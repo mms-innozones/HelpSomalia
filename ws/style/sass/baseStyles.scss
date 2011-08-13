@@ -1,0 +1,1180 @@
+@charset "UTF-8";
+/* CSS Document */
+/*
+ * RESET
+ *
+ */
+/* ensures layout reflows on the iPhone in landscape orientation */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	font-weight: normal;
+	vertical-align: baseline;
+	background: transparent;
+}
+
+a {
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
+	font-size: 100%;
+}
+
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* includes SASS variables for colours and dimensions */
+@import "_include";
+
+/*
+ * END RESET
+ * 
+ */
+ 
+/*
+ * DEFAULT STYLES
+ * 
+ */
+body {
+	font-size: 1em;
+	color: $color-body;
+	font-weight: normal;
+	font-family: sans-serif;
+	line-height: 100%;
+}
+/*
+ * PAGE CONTAINERS
+ * See documentation for details regarding use of #wrap and #content
+ */
+ 
+/* enables layout in these HTML 5 elements */
+header, footer, aside, section, nav {
+	display: block;
+}
+
+#wrap {
+	width: 100%;
+	overflow: hidden;
+	position: absolute;
+	left: 0;
+	padding: 0;
+}
+
+#content {
+	margin-left: $page-gutter;
+	margin-right: $page-gutter;
+}
+footer {
+	background: $color-footer url(../images/footer.png) repeat-x top;
+	padding: .7em 0em;
+	height: $footer-height;
+	p {
+		color: $color-neutral;
+		font-size: .9em;
+		margin-left: $page-gutter;
+		margin-top: $global-top-margin;
+		margin-bottom: 0em;
+		padding: 0em;
+	}
+	&.extended {
+			height:($footer-height)*2;
+	}
+}
+/* clearfix compatible with all Nokia webkit browsers, testing is recommended on other devices */
+.group:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+/* removes bottom margin, useful when stacking components that are normally meant to be used independently */
+.flush {
+	margin-bottom: 0;
+}
+/*
+ * BASIC ELEMENTS
+ * Basic styling of common elements.
+ */
+p {
+	line-height: 125%;
+	margin-top: $global-top-margin;
+	margin-bottom: $global-bottom-margin;
+	clear: both;
+}
+em {
+	font-style: italic;
+}
+/*
+ * LINK STATES
+ * 
+ */
+a:link {
+	color:$color-link;
+} 
+
+a:visited {
+	color:$color-link-visited;
+}
+
+a:hover {
+	color:$color-link-hover;
+}
+
+a:active {
+	color:$color-link-active;
+}
+
+/*
+ * NATIVE LISTS
+ * 
+ */
+ul {
+	list-style: disc;
+	margin-left: ($page-gutter)*2;
+	margin-bottom: $global-bottom-margin;
+	padding-left: $page-gutter;
+	ul {
+		margin: 0.3em 0em;
+	}
+}
+
+ol {
+	list-style: decimal;
+	margin-left: ($page-gutter)*2;
+	padding-left: $page-gutter;
+	margin-bottom: $global-bottom-margin;
+	ol {
+		margin: 0.3em 0em;
+	}
+}
+
+
+/*
+ * HEADERS
+ * 
+ */
+ /*alternate header - designed to be used in apps or widgets*/
+h1.top-aligned {
+	font-size: 1.7em;
+	padding-top: .5em;
+	padding-bottom: .8em;
+	padding-left: $page-gutter;
+	padding-right: $page-gutter;
+	font-weight: bold;
+	background: $color-component-idle url(../images/header-shadow.png) repeat-x bottom;
+	margin-top: 0em;
+	margin-bottom: ($global-bottom-margin)/2;
+	margin-left: $page-negative-gutter;
+	margin-right: $page-negative-gutter;
+	text-align: center;
+}
+
+h1 {
+	font-size: 1.7em;
+	margin-top: $global-top-margin;
+	margin-bottom: ($global-bottom-margin)*.5;
+	clear: both;
+	line-height: 100%;
+	font-weight: bold;
+}
+
+h2 {
+	font-size: 1.5em;
+	margin-top: $global-top-margin;
+	margin-bottom: ($global-bottom-margin)*.5;
+	clear: both;
+	line-height: 100%;
+	color: $color-primary;
+}
+
+h3 {
+	font-size: 1.3em;
+	padding-top: .3em;
+	padding-bottom: .3em;
+	padding-left: $page-gutter;
+	padding-right: $page-gutter;
+	background: $color-neutral url(../images/header-gradient.png) repeat-x bottom;
+	border-top: 1px solid $color-border;
+	margin-top: $global-top-margin;
+	margin-bottom: ($global-bottom-margin)*.7;
+	margin-left: $page-negative-gutter;
+	margin-right: $page-negative-gutter;
+	line-height: 100%; 
+}
+
+h4 {
+	font-size: 1.3em;
+	color: $color-secondary;
+	margin-top: $global-top-margin;
+	margin-bottom: ($global-bottom-margin)*.7;
+	clear: both;
+	line-height: 100%;
+}
+
+h5 {
+	font-size: 1.2em;
+	background-color: $color-component-idle;
+	border-bottom: 1px solid $color-border;
+	border-top: 1px solid $color-border;
+	padding-left: $page-gutter;
+	padding-top: .3em;
+	padding-bottom: .3em;
+	margin-top: $global-top-margin;
+	margin-bottom: ($global-bottom-margin)*.8;
+	margin-left: $page-negative-gutter;
+	margin-right: $page-negative-gutter;
+	clear: both;
+	line-height: 100%;
+}
+
+h6 {
+	font-size: 1em;
+	color: $color-body;
+	margin-top: $global-top-margin;
+	margin-bottom: $global-bottom-margin;
+	border-bottom: 1px solid $color-border;
+	clear: both;
+	font-weight: 600;
+}
+
+
+/*
+ * BLOCKQUOTE
+ * 
+ */
+blockquote {
+	margin-right: ($page-gutter)*2;
+	margin-bottom: ($global-bottom-margin)*2;
+	margin-top:$global-top-margin;
+	padding: 1em 0 0 2em;
+	background: url(../images/quote.png) no-repeat 0em .5em;
+	font-style: italic;
+	p {
+	margin: 0;
+	padding: 0;
+	}
+}
+
+/*
+ * END DEFAULT STYLES
+ * 
+ */
+/*
+ * 1. BRANDING AND MARKETING
+ * 
+ */
+/*
+ * BRANDING AREA
+ * logo, background and hyperlink
+ */
+.branding {
+	height: 4.5em;
+	background: url(../images/branding-background.png) repeat-x bottom;
+	display: block;
+	width: 100%;
+	overflow: hidden;
+	border-top: 5px solid $color-secondary;
+	margin-bottom: $global-bottom-margin;
+	img {
+	padding-top: 1em;
+	padding-left: $page-gutter;
+	}
+	a {
+		width: 100%;
+		height: 5em;
+		display: block;
+		background-image: none;
+		padding-right: 0;
+	}
+}
+/*
+ * ADVERTISMENT CONTAINER
+ * 
+ */
+.advertisement {
+	padding:0;
+	margin: $global-top-margin 0 ($global-bottom-margin)*2 0;
+	width: 100%;
+	p {
+		border: 1px solid $color-border;
+		padding: 0.4em 0.4em;
+		background-color: $color-component-idle;
+		margin-bottom: 0;
+		margin-top: $global-top-margin;
+	}
+	span {
+		text-transform: uppercase;
+		padding: 0;
+		float: right;
+		font-size: 0.7em;
+		color: $color-border;
+		padding-bottom: 0.3em;
+	}
+}
+/*
+ * 2. LISTS
+ * 
+ */
+
+/*
+ * LIST WITH GRAPHIC OR ICON
+ * 
+ */
+ul.list-graphical {
+	list-style-type: none;
+	padding: 0;
+	margin-top: $global-top-margin;
+	margin-bottom: $global-bottom-margin;
+	margin-left: $page-negative-gutter;
+	margin-right: $page-negative-gutter;
+	color: $color-body;
+	border-bottom: $color-border 1px solid;
+	li {
+		background-color: $color-component-idle;
+		display: block;
+		line-height: $component-height;
+		border-top: $color-border 1px solid;
+		overflow: hidden;
+		&:hover {
+			background: $color-component-hover url(../images/global-hover.png) repeat-x top;
+			
+		}
+	}
+	a {
+		display: block;
+		height: $component-height;
+		text-decoration: none;
+		padding-right: $page-gutter;
+		&:link, &:visited  {
+			color: $color-body;
+		}
+		img {
+			float: left;
+			margin-right: .5em;
+			width: auto;
+			height: $component-height;
+		}
+		&:hover {
+			outline: $link-outline;
+			color: $color-neutral;
+		}
+		&:active {
+			color: $color-neutral;
+		}
+	}
+}
+
+
+/*
+ * SIMPLE STYLED LIST BOX
+ * 
+ */
+/*note: change to line height and height required to adjust height*/
+nav {
+	ul.list {
+		list-style-type: none;
+		padding: 0;
+		margin-top: 0;
+		margin-bottom: $global-bottom-margin;
+		margin-left: $page-negative-gutter;
+		margin-right: $page-negative-gutter;
+		border-bottom: 1px solid $color-border;
+		color: $color-body; 
+		li {
+			background-color: $color-component-idle;
+			line-height: $component-height;
+			display: block;
+			border-top: $color-border 1px solid;
+			&:hover {
+				background: $color-component-hover url(../images/global-hover.png) repeat-x top;
+			}
+			}
+		a {
+			padding-left: .5em;
+			display: block;
+			height: $component-height;
+			background: url(../images/open.png) no-repeat right center;
+			text-decoration: none;
+			overflow: hidden;
+			&:link, &:visited  {
+				color: $color-body;
+			}
+			&:hover {
+				outline: $link-outline;
+				color: $color-neutral;
+			}
+			&:active {
+				color: $color-neutral;
+			}
+		}
+	}
+
+}
+
+
+/*
+ * ACCORDION DEFINITION LIST
+ * 
+ */
+dl.list-accordion {
+	margin-left: $page-negative-gutter;
+	margin-right: $page-negative-gutter;
+	margin-bottom: $global-bottom-margin;
+	border-bottom: 1px solid $color-border;
+	dt{
+		padding-left: .5em;
+		line-height: $component-height;
+		height: $component-height;
+		border-top: 1px solid $color-border;
+	}
+	/*definition container*/
+	dd {
+		padding: $page-gutter;
+		line-height: normal;
+		background-color: $color-neutral;
+		/*content inside of definition container*/
+		p {
+			margin: 0;
+			padding: 0 0 0.4em 0;
+		}
+	}
+	/*definition term*/
+	dt {
+		background-color: $color-component-idle;
+		/*container for expand/collapse icon*/
+		span {
+			width: 14px;
+			height: $component-height;
+			margin-right: $page-gutter;
+			display: block;
+			float: left;
+		}
+		&.expanded {
+			border-bottom: 1px solid $color-border;
+			/*switches icon when expanded*/
+			span{
+				background: url(../images/sprite-expand-collapse.png) no-repeat right center;
+			}
+			&:hover {
+				background: $color-component-hover url(../images/global-hover.png) repeat-x top;
+				color: $color-neutral;
+				cursor: pointer;
+			}
+		}
+		&.collapsed {
+			border-bottom: none;
+			/*switches icon when collapsed*/
+			span{
+				background: url(../images/sprite-expand-collapse.png) no-repeat left center;
+			}
+		&:hover {
+			background: $color-component-hover url(../images/global-hover.png) repeat-x top;
+			color: $color-neutral;
+			cursor: pointer;
+		}	
+		}
+	}
+}
+
+
+/*
+ * IMAGE GRID
+ * 
+ */
+
+.grid {
+	ul {
+		width: 100%;
+		margin: 0 auto;
+		padding-left:0;
+		margin-bottom: $global-bottom-margin;
+			li {
+			display: inline;
+			img{
+			border: 1px solid $color-border;
+			padding: .2em .2em;
+			margin-right: 0;
+			margin-left: 0;
+			margin-bottom: ($global-bottom-margin)/2;
+			}
+		}
+	}
+}
+
+/* adjusts padding and margins to form 4 image wide grid on larger devices*/
+@media screen and (min-width: 320px) {
+	.grid {
+		ul {
+			li {
+				img{
+				padding: .3em .3em;
+				margin-right: .1em;
+				margin-left: .1em;
+				}
+			}
+		}
+	}
+}
+
+
+/*
+ * 3. NAVIGATION COMPONENTS
+ * 
+ */
+/*
+ * BACK TO TOP AND HOME
+ * 
+ */
+nav.pagelevel {
+	font-size: 1em;
+	border-top: 1px solid $color-border;
+	margin-top: $global-top-margin;
+	margin-bottom: $global-bottom-margin;
+	margin-left: $page-negative-gutter;
+	margin-right: $page-negative-gutter;
+	a {
+		color: $color-body;
+		text-decoration: none;
+		width: 100%;
+		display: block;
+		line-height: ($component-height)*.85;
+	}
+	&.top {
+		background: $color-component-idle url(../images/top.png) no-repeat $page-gutter center;
+		border-bottom: 1px solid $color-border;
+		padding-left: 2.2em;
+	}
+	&.home {
+		background: $color-component-idle url(../images/home.png) no-repeat $page-gutter center;
+		padding-left: 1.5em;
+		margin-bottom: 0;
+	}
+}
+
+
+/*
+ * BREADCRUMBS
+ * 
+ */
+
+nav.breadcrumbs {
+	ul {
+		margin-top: $global-top-margin;
+		margin-bottom: $global-bottom-margin;
+		margin-left: 0;
+		padding-right: $page-gutter;
+		padding-left:0;
+		font-size: 80%;
+		list-style-type: none;
+		li {
+			display: inline;
+			line-height: ($component-height)*.75;
+		}
+	}
+}
+
+
+/*
+ * FOOTER OR ADMIN NAV
+ * 
+ */
+
+nav.admin {
+	ul {
+		display: block;
+		color: $color-neutral;
+		padding-top: 0em;
+		margin-bottom: $global-bottom-margin;
+		padding-left: 0;
+		margin-right: $page-gutter;
+		margin-bottom: 0;
+		font-size: .8em;
+		margin-left: $page-gutter;
+		a {
+			color: $color-neutral;
+		}
+		li {
+			display: inline;
+			line-height: ($component-height)*.75;
+			float: left;
+			a {
+				padding-right: 0.5em;
+				padding-left: 0.5em;
+				border-right: 1px solid $color-neutral;
+				text-decoration: none;
+			}
+			&.last a {
+				border-right: none;
+				padding-right: 0;
+			}
+			&.first a {
+				padding-left: 0;
+			}
+		}
+	}
+}
+/*
+ * HORIZONTAL NAV
+ * 
+ */
+ 
+nav.horizontal {
+	ul {
+		padding: 0;
+		margin: 0 0 $global-bottom-margin 0;
+		list-style-type: none;
+		width: 100%;
+		float: left;
+		border-top: 1px solid $color-border;
+		border-bottom: 2px solid $color-border;
+		border-left: 1px solid $color-border;
+		border-right: 1px solid $color-border;
+		background-color: $color-component-idle;
+		li {
+			float: left;
+			margin: 0;
+			padding: 0;
+			background-color: $color-component-idle;
+			/* switch to:hover for non-touch devices*/
+			&:hover {
+			background: $color-component-hover url(../images/global-hover.png) repeat-x top;
+			}
+		}
+		a {
+			text-decoration: none;
+			display: block;
+			cursor: pointer;
+			padding: 0 0;
+			margin: 0;
+			line-height: $component-height;
+			background: url(../images/vertical-divider.png) repeat-y left center;
+			text-align: center;
+			color: $color-body;
+			&.first {
+				background-image: none;
+			}
+			&:hover {
+				outline: $link-outline;
+				color: $color-neutral;
+				background-image: none;
+			}
+		}
+	}
+}
+
+
+/*sets number of navigation bar items*/
+/*add class to li*/
+ul.four-piece li {
+	width: 25%;
+}
+ul.three-piece li {
+	width: 33.3%;
+}
+ul.two-piece li {
+	width: 50%;
+}
+
+/*
+ * 4. STYLISED LINKS
+ * includes icon to represent the type of link
+ */
+/*external link*/
+a.external {
+	background: url(../images/icon-link-external.png) no-repeat right top;
+	padding-right: 1em;
+}
+/*links to ical data*/
+/*see 'data-ical' in resources*/
+a.ical {
+	background: url(../images/icon-link-ical.png) no-repeat right top;
+	padding-right: 1em;
+}
+
+a[href^="mailto:"] {
+	background: url(../images/icon-link-email.png) no-repeat right top;
+	padding-right: 1em;
+}
+
+a[href^="tel:"] {
+	background: url(../images/icon-link-tel.png) no-repeat right top;
+	padding-right: 1em;
+}
+
+a[href^="sms:"] {
+	background: url(../images/icon-link-sms.png) no-repeat right top;
+	padding-right: 1em;
+}
+/*
+ * 5. BUTTON
+ * 
+ */
+/*
+ * STYLED BUTTON
+ * 
+ */
+/* change button width to auto for full-width button or customise width */
+/* style has been modified to work with 'hovering' script */
+/* see documentation for details */
+a.button {
+	display: block;
+	line-height: $component-height;
+	width: 6em;
+	background-color: $color-component-idle;
+	text-align: center;
+	border-bottom: 2px solid $color-border;
+	border-left: 1px solid $color-border;
+	border-right: 1px solid $color-border;
+	border-top: 1px solid $color-border;
+	text-decoration: none;
+	color: $color-body;
+	padding: 0 .3em;
+	margin-bottom: $global-bottom-margin;
+	/* if not using the 'hovering' script, rename this style to ':hover' */
+	&.hovering {
+		background: $color-component-hover url(../images/button.png) repeat-x bottom;
+		color: $color-neutral;
+		outline: $link-outline;
+	}
+}
+
+/*
+ * 6. FORMS
+ * 
+ */
+fieldset {
+	margin-top: $global-top-margin;
+}
+legend {
+	font-size: 110%;
+	font-weight: bold;
+	padding-bottom: .5em;
+	color: $color-primary;
+}
+form {
+	color: $color-body;
+	label {
+	font-size: .9em;
+	margin-bottom: $global-bottom-margin;
+	margin-top: .5em;	
+	}	
+	ul {
+	list-style-type: none;
+	margin-bottom: $global-bottom-margin;
+	margin-top: .5em;
+	margin-left: 0;
+	padding: 0;
+		li {
+			margin: 0;
+			padding: 0;
+		}
+	}
+}
+		
+input[type='text'] { 
+	border: 1px solid $color-border;
+	background: $color-neutral url(../images/form-input-shadow.png) repeat-x top;
+	display: block;
+	padding: 0.2em;
+	width: 98%;		
+	color: $color-body;
+	margin-bottom: $global-bottom-margin;
+}
+
+textarea { 
+	border: 1px solid $color-border;
+	background: $color-neutral url(../images/form-input-shadow.png) repeat-x top;
+	display: block;
+	padding: 0.2em;
+	color: $color-body;
+	width: 98%;	
+	line-height: normal;
+	margin-bottom: $global-bottom-margin;
+}
+
+form ul li input[type='radio'], form ul li input[type='checkbox'] { 
+	margin: 0;
+	padding: 0;
+}
+
+select {
+	border: 1px solid $color-border;
+	background: $color-neutral;
+	color: $color-border-dk;
+	margin-top: $global-top-margin;
+	margin-bottom: $global-bottom-margin;
+	padding-left: $page-gutter;
+	display: block;
+	width: 98%;
+}
+
+input[type='button'] {
+	border: 1px solid $color-border;
+	background-color: white;
+	padding: 1em 1.3em;
+	color: $color-border-dk;
+	margin: $global-top-margin 0 $global-bottom-margin 0;
+}
+
+
+/*
+ * 7. TABLES
+ * 
+ */
+table {
+	border: 1px solid $color-border;
+	margin: 0;
+	width: 100%;
+	color: $color-body;
+	vertical-align: top;
+	margin-bottom: $global-bottom-margin;
+}
+
+td {
+	border-bottom: 1px solid $color-border;
+	border-right: 1px solid $color-border;
+	padding-left: .3em;
+	padding-right: .3em;
+	padding-top: .2em;
+	padding-bottom: .2em;
+	line-height: ($component-height)*.65;
+}
+tr {
+	height: 1.5em;
+	&:hover {
+		background: $color-component-hover url(../images/global-hover.png) repeat-x top;
+		color: $color-neutral; 
+	}
+}
+th, tfoot {
+	border-top: 1px solid $color-neutral;
+	border-left: 1px solid $color-neutral;
+	background-color: $color-footer;
+	text-align: left;
+	padding-left: .3em;
+	padding-right: .2em;
+	padding-top: .2em;
+	padding-bottom: .2em;
+	line-height: ($component-height)*.65;
+	font-weight: bold;
+	color: $color-neutral;
+}
+caption {
+	font-style: italic;
+	caption-side: bottom;
+	text-align: left;
+	padding-top: 0.3em;
+	padding-bottom: 0.3em;
+}
+.odd {
+	background-color: $color-component-idle;
+}
+
+
+/*
+ * 8. FLEXIBLE CONTAINERS
+ * 
+ */
+/*
+ * SIMPLE FLEXIBLE BOX
+ * 
+ */
+.box-flat {
+	background-color: $color-component-idle;
+	margin-bottom: $global-bottom-margin;
+	padding: 1em 1em 0.2em 1em;
+	border-top: 1px solid $color-border;
+	border-bottom: 2px solid $color-border;
+	border-left: 1px solid $color-border;
+	border-right: 1px solid $color-border;
+}
+.box-flat p {
+	padding: 0;
+}
+
+/*
+ * FLEXIBLE BOX WITH ROUNDED CORNERS
+ * 
+ */
+.box-rounded {
+	background: url(../images/box-bottom-left.png) no-repeat left bottom;
+	margin-top: $global-top-margin;
+	margin-bottom: $global-bottom-margin;
+	h2 {
+		background: url(../images/box-top-right.png) no-repeat right top;
+		padding-top: .5em;
+		padding-bottom:5px;
+		margin: 0;
+		font-size: 110%;
+		color: $color-secondary;
+		padding-left: .8em;
+		padding-right: .8em;
+		border: none;
+	}
+	p {
+		padding-left: .8em;
+		padding-right: .8em;
+		padding-top: 0;
+		padding-bottom: 0;
+		border: none;
+		margin: 0;
+	}
+}
+.box-rounded-outer {
+	background: url(../images/box-bottom-right.png) no-repeat right bottom;
+	padding-bottom: .5em;
+}
+.box-rounded-inner {
+	background: url(../images/box-top-left.png) no-repeat left top;
+}
+
+
+
+/*
+ * 9. UTILITY COMPONENTS
+ * see documentation for details
+ */
+/*
+ * 5-STAR RATING
+ * static only
+ */
+
+.rating {
+	width: 150px;
+	height: 24px;
+	background: url(../images/sprite-rating.png) no-repeat 0px 0px;
+	margin-bottom: $global-bottom-margin;
+	span {
+		float: right;
+		padding-top: 0.4em;
+	}
+}
+.stars-0 {
+	background-position: left 0px;
+}
+.stars-1 {
+	background-position: left -25px;
+}
+.stars-2 {
+	background-position: left -50px;
+}
+.stars-3 {
+	background-position: left -75px;
+}
+.stars-4 {
+	background-position: left -100px;
+}
+.stars-5 {
+	background-position: left -125px;
+}
+
+/*
+ * \ SWITCH
+ * 
+ */
+ol.toggle-switch {
+	background: $color-neutral url(../images/toggle-button.png) repeat-x top;
+	height: 2em;
+	line-height: 2em;
+	width: 7.5em;
+	padding: 0 0 0 0;
+	margin: 0;
+	border: 1px solid $color-border-dk;
+	li {
+		display: block;
+		float: left;
+		text-align: center;
+		width: 50%;
+		color: $color-neutral;
+		background: $color-component-hover url(../images/toggle-on.png) repeat-x left top;
+		height: 2em;
+		a {
+			color: $color-neutral;
+			text-transform: uppercase;
+			font-weight: bold;
+			display: block;
+			text-decoration: none;
+			cursor: pointer;
+			line-height: 2em;
+			&:hover {
+				outline: $link-outline;
+			}
+		}
+	}
+}
+
+ol.toggle-switch.on {
+	li {
+		&.label-off {
+			visibility: hidden;
+		}
+		a {
+		border-right: 2px solid $color-border-dk;
+		}	
+	}
+}
+ol.toggle-switch.off {
+	background: $color-neutral url(../images/toggle-button.png) repeat-x top;	
+	li {
+		background: $color-border url(../images/toggle-off.png) repeat-x left top;
+		&.label-on {
+			visibility: hidden;
+		}
+		a {
+			color: $color-body;
+			border-left: 2px solid $color-border-dk;
+		}
+	}
+}
+
+ul.toggle {
+	list-style-type: none;
+	margin-bottom: 0;
+	label {
+		font-weight: bold;
+	}
+}
+/*
+ * LIST CONTAINER FOR TOGGLE SWITCH
+ * includes label
+ */
+/*line-height adjusts container height*/
+ul.list-toggle {
+	list-style-type: none;
+	padding: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-left: $page-negative-gutter;
+	margin-right: $page-negative-gutter;
+	border-top: 1px solid $color-border;
+	color: $color-body;
+	height: 3em;
+	background-color: $color-component-idle;
+	display: block;
+	label {
+		padding-left: $page-gutter;
+		margin-top: 1em;
+		float: left;
+		display: block;
+	}
+	ul {
+		margin-top: 0;
+	}
+	ol.toggle-switch {
+		margin: .5em .5em 0em 0em;
+		float: right;
+		height: 2em;
+	}
+	&.last {
+		border-bottom: 1px solid $color-border; 
+		margin-bottom: $global-bottom-margin;
+	}
+}
+
+
+
+
+/*
+ * SLIDESHOW
+ * 
+ */
+#slideshow {
+	width: 200px;
+	text-align: center;
+	margin: 0 auto;
+	.slideshow-image {
+		display: block;
+		width: 200px;
+		height: 130px;
+		background: url(../images/photos/loading.gif) no-repeat center 4em;
+		img {
+			margin: 0 auto;
+		}
+	}
+	span {
+		width: 13em;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom:0.5em;
+		font-size: 0.9em;
+		padding: .3em 5px;
+	}
+	a {
+		text-decoration: none;
+	}
+	p {
+		margin: 0;
+		padding: .3em 0;
+		font-size: .8em;
+	}
+	ul.controls {
+		width: 6em; 
+		float:none;
+		margin: 0 auto 1em auto;
+		li {
+			&:hover{
+				background-image: none;
+				background-color: $color-component-idle;
+			}
+		/* if not using the doHighlight function, remove the 'hovering' style */
+		/* then apply the background image declarations to the :hover class above*/
+			&.hovering {
+				background: $color-component-hover url(../images/global-hover.png) repeat-x top;
+				a {
+				background-image: none;
+			}
+			}
+		}
+		img {
+			margin: .5em 0;
+			background-image: none;
+			vertical-align: middle;
+		}
+		a {
+			line-height: 1.5em;
+			background: url(../images/vertical-divider.png) repeat-y left center;
+			&.first {
+				background-image: none;
+			}
+		}
+	}
+}
+
+
+		
+ol.data {
+	display: none;
+}
+
