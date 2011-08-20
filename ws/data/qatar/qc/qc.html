@@ -3,6 +3,7 @@
 	<title>HelpSomalia</title>
 	<meta http-equiv="content-type" content="text-html; charset=utf-8">
 	<link href="../../../style/styles.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="../../../scripts/js.js"></script>
 </head>
 
 <body>
@@ -10,13 +11,71 @@
 	
 	</div>
 
-	<h1>هيئة الإغاثة الإسلامية العالمية</h1>
-للأستفسار
+	<h1>
+		<script type="text/javascript">
+			if(getLanguage() == "Arabic")
+				document.write("مؤسسة قطر الخيرية");
+			else if(getLanguage() == "English")
+				document.write("Qatar Charity");
+		</script>
+	</h1>
+
+	<script type="text/javascript">
+		if(getLanguage() == "Arabic")
+			document.write("للأستفسار");
+		else if(getLanguage() == "English")
+			document.write("Inquire");
+	</script>
+
 	<div class="phoneNumber"><a href="tel://44667711">44667711</a></div>
-مصرف قطر الاسلامي حساب رقم  	
+  	
+	<script type="text/javascript">
+		if(getLanguage() == "Arabic")
+			document.write("مصرف قطر الاسلامي حساب رقم");
+		else if(getLanguage() == "English")
+			document.write("Qatar Islamic Bank account No.");
+	</script>
+
 	<div class="bankAccount">100141244</div>
 
-	<div class="website"><a href="http://www.qcharity.com/a/index.php?option=com_content&view=article&id=279&Itemid= ">معلومات عن حملة الأغاثة</a></div>
+	<script type="text/javascript">
+		if(getLanguage() == "Arabic")
+			document.write("للتبرع إرسال رسالة قصيرةإلى ");
+		else if(getLanguage() == "English")
+			document.write("Donate via sending SMS to");
+	</script>
+	<br>
+	Qtel
+	<div class="smsNumber"><a href="sms://92331">92331</a></div>
+
+	<script type="text/javascript">
+		if(getLanguage() == "Arabic")
+			document.write("مبلغ 25 درهم");
+		else if(getLanguage() == "English")
+			document.write("25 Dirham");
+	</script>
+	<br><br>
+	Vodafone
+	<div class="smsNumber"><a href="sms://97771">97771</a></div>
+	<script type="text/javascript">
+		if(getLanguage() == "Arabic")
+			document.write("مبلغ 5 درهم");
+		else if(getLanguage() == "English")
+			document.write("5 Dirham");
+	</script>
+	<br>
+	<br>
+	
+	<div class="website"><a href="http://donate.qcharity.net/qc_epayment/qc_donate.aspx?Lang=ar">
+		<script type="text/javascript">
+			if(getLanguage() == "Arabic")
+			{
+				document.write("للتبرع من خلال الموقع الألكترونى");
+			}
+			else if(getLanguage() == "English")
+				document.write("Donate through website");
+		</script>
+	</a></div>
 </body>
 
 </html>

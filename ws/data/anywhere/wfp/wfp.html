@@ -3,17 +3,30 @@
 	<title>HelpSomalia</title>
 	<meta http-equiv="content-type" content="text-html; charset=utf-8">
 	<link href="../../../style/styles.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="../../../scripts/js.js"></script>
 </head>
 
 <body>
 	<div class="naviBar">
 	
 	</div>
-
-	<h1>برنامج الأغذية العالمى</h1>
+	<h1>
+		<script type="text/javascript">
+			if(getLanguage() == "Arabic")
+				document.write("برنامج الأغذية العالمى");
+			else if(getLanguage() == "English")
+				document.write("World Food Programme");
+		</script>
+	</h1>
 	
-	<div class="website"><a href="https://www.wfp.org/donate/hoa_banners/">التبرع من خلال الموقع الألكترونى</a></div>
-
+	<div class="website"><a href="https://www.wfp.org/donate/hoa_banners/">
+		<script type="text/javascript">
+			if(getLanguage() == "Arabic")
+				document.write("التبرع من خلال الموقع الألكترونى");
+			else if(getLanguage() == "English")
+				document.write("Donate through the website");
+		</script>
+	</a></div>
 </body>
 
 </html>
