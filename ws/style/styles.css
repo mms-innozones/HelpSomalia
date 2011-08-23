@@ -6,12 +6,24 @@ border:0px;
 padding:10px;
 }
 
-a:link { color:white; text-decoration: none; }
-A:visited { color:white; text-decoration:none;}
+a:link { color:black; text-decoration: none; }
+A:visited { color:black; text-decoration:none;}
+
+html{
+background:url(../images/bg.png);
+}
 
 Body{
-background:url(../images/bg.png);
+}
+
+h1{
 color:white;
+}
+
+.main{
+color:black;
+background-color:#e8e8e8;
+padding:20px;
 }
 
 .flag{
