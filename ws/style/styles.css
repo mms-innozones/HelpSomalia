@@ -1,6 +1,45 @@
-.Button{
+.button{
+}
+
+img{
+border:0px;
+padding:10px;
+}
+
+a:link { color:white; text-decoration: none; }
+A:visited { color:white; text-decoration:none;}
+
+Body{
+background:url(../images/bg.png);
+color:white;
+}
+
+.flag{
+}
+
+.emailAccount{
+}
+
+.phoneNumber{
+font-size:20px;
+}
+
+.smsNumber{
+font-size:20px;
 
 }
 
-a:link { text-decoration: none; }
+.website{
+}
+
+.naviBar{
+}
+
+.bankAccount{
+}
+
+#splash{
+background:url(../images/splash.png);
+height:800px;
+}
 
