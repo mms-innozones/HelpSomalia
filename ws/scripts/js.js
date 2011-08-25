@@ -71,3 +71,21 @@ function getLanguage()
 	//return this.language;
 }
 
+// row clickable
+function ChangeColor(tableRow, highLight)
+    {
+    if (highLight)
+    {
+      tableRow.style.backgroundColor = '#525859';
+    }
+    else
+    {
+      tableRow.style.backgroundColor = '#e8e8e8';
+    }
+  }
+
+function DoNav(theUrl)
+  {
+  	document.location.href = theUrl;
+  }
+
